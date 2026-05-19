@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZS Automotive | Tires, Oil Changes, Brakes & Safety in Etobicoke</title>
+  <meta name="description" content="ZS Automotive in Etobicoke offers tire service, oil changes, brake work, safety inspections, and quote requests from 354 Royal York Rd Unit 2." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-strip">
+      <div class="container top-strip__inner">
+        <span>354 Royal York Rd Unit 2, Etobicoke</span>
+        <span>Tires • Oil Changes • Brakes • Safety</span>
+        <a href="tel:+14376038022">Call 437-603-8022</a>
+      </div>
+    </div>
+
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="ZS Automotive home">
+        <img class="brand-logo" src="assets/zs-automotive-logo-clean.png" alt="ZS Automotive" />
+      </a>
+
+      <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#quote">Request Quote</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-call" href="tel:+14376038022">Call Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Etobicoke auto service</p>
+          <h1>Tires, oil changes & brakes in Etobicoke.</h1>
+          <p class="hero-text">Fast quotes for tire service, oil changes, brakes, safety inspections, and lighting work at ZS Automotive on Royal York Rd.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:+14376038022">Call 437-603-8022</a>
+            <a class="button button-secondary" href="#quote">Request a Quote</a>
+          </div>
+
+          <div class="hero-mini-info" aria-label="Fast shop information">
+            <span>Royal York Rd</span>
+            <span>Quotes confirmed first</span>
+            <span>No online payment</span>
+          </div>
+        </div>
+
+        <aside class="hero-quote" aria-label="Quick quote form">
+          <img class="shop-photo" src="assets/zs-automotive-sign.png" alt="ZS Automotive shop sign" />
+          <div class="quote-widget">
+            <div class="widget-heading">
+              <p class="widget-title">Quick quote</p>
+              <p>Tell us the vehicle and service. Final price is confirmed before work starts.</p>
+            </div>
+            <div class="widget-fields">
+              <label for="heroVehicle">Vehicle</label>
+              <input id="heroVehicle" type="text" placeholder="Example: 2020 Honda Civic" />
+
+              <label for="heroService">Service needed</label>
+              <select id="heroService">
+                <option value="">Pick a service</option>
+              </select>
+
+              <label for="heroPostal">Postal code</label>
+              <input id="heroPostal" type="text" placeholder="Postal code" />
+
+              <a class="button button-primary button-full" href="#quote" id="heroQuoteButton">Continue Quote</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Shop highlights">
+      <div class="container trust-strip__inner">
+        <div><strong>Local shop</strong><span>Royal York Rd, Etobicoke</span></div>
+        <div><strong>Call first</strong><span>Quick service questions welcome</span></div>
+        <div><strong>Starting prices</strong><span>Clear estimates before booking</span></div>
+        <div><strong>No surprises</strong><span>Final price confirmed by the shop</span></div>
+      </div>
+    </section>
+
+    <section class="action-rail" aria-label="Quick actions">
+      <div class="container action-rail__inner">
+        <a href="tel:+14376038022"><strong>Call the shop</strong><span>437-603-8022</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke" target="_blank" rel="noopener"><strong>Get directions</strong><span>354 Royal York Rd Unit 2</span></a>
+        <a href="#pricing"><strong>Check pricing</strong><span>Tires, oil, brakes & safety</span></a>
+        <a href="#quote"><strong>Send details</strong><span>Request a quote online</span></a>
+      </div>
+    </section>
+
+    <section class="section container how-section" aria-label="How quote requests work">
+      <div class="section-heading section-heading-left compact-heading">
+        <p class="eyebrow">Simple quote process</p>
+        <h2>Three quick steps.</h2>
+      </div>
+      <div class="steps-widget">
+        <div><span>1</span><strong>Pick a service</strong><p>Choose tires, oil, brakes, safety, lighting, or repair work.</p></div>
+        <div><span>2</span><strong>Send vehicle details</strong><p>Add your year, make, model, preferred date, and notes.</p></div>
+        <div><span>3</span><strong>Shop confirms</strong><p>ZS Automotive confirms price and availability before starting.</p></div>
+      </div>
+    </section>
+
+    <section class="section container" id="services">
+      <div class="section-heading section-heading-left">
+        <p class="eyebrow">Services</p>
+        <h2>Common shop services</h2>
+        <p>Choose a category below or build a quote from the pricing menu.</p>
+      </div>
+
+      <div class="service-grid" id="serviceGrid"></div>
+    </section>
+
+    <section class="section pricing-section" id="pricing">
+      <div class="container pricing-layout">
+        <div>
+          <div class="section-heading section-heading-left compact-heading">
+            <p class="eyebrow">Pricing menu</p>
+            <h2>Starting prices</h2>
+            <p>Prices shown are starting estimates. Final pricing depends on vehicle fitment, parts, taxes, wheel condition, and inspection findings.</p>
+          </div>
+
+          <div class="pricing-panel">
+            <div class="pricing-tabs" id="categoryTabs" role="tablist" aria-label="Pricing categories"></div>
+
+            <div class="price-builder">
+              <div class="form-row two-col">
+                <div>
+                  <label for="serviceSelect">Service</label>
+                  <select id="serviceSelect"></select>
+                </div>
+                <div>
+                  <label for="quantityInput">Quantity</label>
+                  <input id="quantityInput" type="number" min="1" value="1" />
+                </div>
+              </div>
+
+              <div class="form-row two-col hidden" id="tireOptions">
+                <div>
+                  <label for="rimSizeSelect">Rim size</label>
+                  <select id="rimSizeSelect">
+                    <option value="14-18">14&quot;–18&quot;</option>
+                    <option value="19-21">19&quot;–21&quot;</option>
+                    <option value="22-24">22&quot;–24&quot;</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="tireMountType">Wheel setup</label>
+                  <select id="tireMountType">
+                    <option value="off-rim">Off rim</option>
+                    <option value="on-rim">On rim</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row two-col hidden" id="oilOptions">
+                <div>
+                  <label for="extraLitres">Extra litres</label>
+                  <input id="extraLitres" type="number" min="0" step="0.5" value="0" />
+                </div>
+                <div>
+                  <label for="premiumFilter">Premium filter</label>
+                  <select id="premiumFilter">
+                    <option value="0">No</option>
+                    <option value="30">Add premium filter (+$30)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row hidden" id="warrantyOptions">
+                <label class="checkbox-line">
+                  <input id="warrantyCheckbox" type="checkbox" />
+                  <span>Add 1-year extended warranty for $100</span>
+                </label>
+              </div>
+
+              <button class="button button-primary" type="button" id="addToQuoteButton">Add to Quote</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="estimate-card" aria-label="Quote estimate summary">
+          <div class="estimate-top">
+            <h3>Estimate list</h3>
+            <button class="link-button" type="button" id="clearQuoteButton">Clear</button>
+          </div>
+          <div class="quote-items" id="quoteItems">
+            <p class="empty-state">Add a service to see the estimate here.</p>
+          </div>
+          <div class="estimate-total-row">
+            <span>Estimated total</span>
+            <strong id="quoteTotal">$0</strong>
+          </div>
+          <a class="button button-secondary button-full" href="#quote">Send Request</a>
+          <p class="fine-print">Starting estimate only. ZS Automotive confirms the final price before work begins.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container why-section" id="why">
+      <div class="section-heading section-heading-left">
+        <p class="eyebrow">Why ZS Automotive?</p>
+        <h2>Clear service, no runaround.</h2>
+      </div>
+      <div class="why-list">
+        <div><strong>Straightforward quotes</strong><span>Starting prices are shown, then confirmed with your vehicle details.</span></div>
+        <div><strong>Local Etobicoke shop</strong><span>Visit the shop on Royal York Rd or call before coming in.</span></div>
+        <div><strong>Common service coverage</strong><span>Tires, oil changes, brakes, safety inspections, bulbs, TPMS, and tire repair.</span></div>
+        <div><strong>No online payment required</strong><span>Submit the request first. The shop confirms availability and pricing.</span></div>
+      </div>
+    </section>
+
+    <section class="section container" id="quote">
+      <div class="quote-shell">
+        <div class="quote-intro">
+          <p class="eyebrow">Quote request</p>
+          <h2>Send your vehicle details.</h2>
+          <p>Need tires, an oil change, brakes, safety work, or lighting service? Send the details and ZS Automotive will confirm pricing before work begins.</p>
+          <div class="quote-contact-box">
+            <span>Prefer to call?</span>
+            <a href="tel:+14376038022">437-603-8022</a>
+          </div>
+        </div>
+
+        <form class="quote-form" id="quoteForm">
+          <div class="form-row two-col">
+            <div>
+              <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" required />
+            </div>
+            <div>
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" required />
+            </div>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" required placeholder="Phone number" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="Email address" />
+            </div>
+          </div>
+
+          <div class="form-row three-col">
+            <div>
+              <label for="vehicleYear">Year</label>
+              <input id="vehicleYear" name="vehicleYear" type="text" placeholder="2020" />
+            </div>
+            <div>
+              <label for="vehicleMake">Make</label>
+              <input id="vehicleMake" name="vehicleMake" type="text" placeholder="Honda" />
+            </div>
+            <div>
+              <label for="vehicleModel">Model</label>
+              <input id="vehicleModel" name="vehicleModel" type="text" placeholder="Civic" />
+            </div>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="serviceNeeded">Service needed</label>
+              <select id="serviceNeeded" name="serviceNeeded">
+                <option value="">Pick a service</option>
+              </select>
+            </div>
+            <div>
+              <label for="preferredDate">Preferred date</label>
+              <input id="preferredDate" name="preferredDate" type="date" />
+            </div>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="postalCode">Postal code</label>
+              <input id="postalCode" name="postalCode" type="text" placeholder="Postal code" />
+            </div>
+            <div>
+              <label for="contactMethod">Best contact method</label>
+              <select id="contactMethod" name="contactMethod">
+                <option>Phone</option>
+                <option>Text</option>
+                <option>Email</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Example: Winter tire changeover, please include balancing if needed."></textarea>
+          </div>
+
+          <div class="selected-services-box">
+            <div class="selected-services-heading">
+              <strong>Selected services</strong>
+              <span id="selectedServicesCount">0 items</span>
+            </div>
+            <div id="selectedServicesPreview" class="selected-services-preview">No services added yet.</div>
+          </div>
+
+          <div class="form-actions form-actions-tight">
+            <button class="button button-primary" type="submit">Submit Quote Request</button>
+            <a class="button button-secondary" href="tel:+14376038022">Call Instead</a>
+          </div>
+          <p class="fine-print">ZS Automotive will confirm the final price and appointment availability before any work begins.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section review-section">
+      <div class="container review-layout">
+        <div>
+          <p class="eyebrow">Customer feedback</p>
+          <h2>Known for clear explanations and fair service.</h2>
+          <p>Public review summaries mention straightforward communication, careful inspections, and reasonable pricing.</p>
+        </div>
+        <div class="review-points">
+          <div><strong>4.9 rating</strong><span>Based on public local listing data</span></div>
+          <div><strong>51 reviews</strong><span>Verify before publishing live</span></div>
+          <div><strong>Common feedback</strong><span>Quick diagnostics • clear pricing • careful inspections</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container contact-section" id="contact">
+      <div class="contact-layout">
+        <div class="contact-main">
+          <p class="eyebrow">Contact</p>
+          <h2>Call or request a quote.</h2>
+          <p>For tire service, oil changes, brakes, safety work, or lighting service, call the shop or send your vehicle details.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="tel:+14376038022">Call 437-603-8022</a>
+            <a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&query=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+
+        <div class="contact-details">
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+14376038022">437-603-8022</a>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:quotes@zsauto.ca">quotes@zsauto.ca</a>
+          </div>
+          <div>
+            <strong>Address</strong>
+            <a href="https://www.google.com/maps/search/?api=1&query=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke" target="_blank" rel="noopener">354 Royal York Rd Unit 2, Etobicoke</a>
+          </div>
+        </div>
+
+        <div class="hours-card">
+          <strong>Hours</strong>
+          <ul>
+            <li><span>Monday–Friday</span><span>8 AM–8 PM</span></li>
+            <li><span>Saturday</span><span>9 AM–5 PM</span></li>
+            <li><span>Sunday</span><span>9 AM–5 PM</span></li>
+          </ul>
+          <p>Call ahead to confirm current availability.</p>
+        </div>
+
+        <div class="map-card" aria-label="Map to ZS Automotive">
+          <div class="map-card__top">
+            <div>
+              <strong>Find ZS Automotive</strong>
+              <span>354 Royal York Rd Unit 2, Etobicoke</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+          <iframe
+            title="Google Map showing ZS Automotive on Royal York Road in Etobicoke"
+            src="https://www.google.com/maps?q=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke%20ON&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ZS Automotive. All rights reserved.</p>
+      <p>Tires • Oil Changes • Brakes • Safety</p>
+    </div>
+  </footer>
+
+  <div class="mobile-action-bar" aria-label="Mobile quick actions">
+    <a href="tel:+14376038022">Call</a>
+    <a href="#quote">Quote</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke" target="_blank" rel="noopener">Directions</a>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

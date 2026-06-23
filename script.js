@@ -55,17 +55,6 @@ const categories = [
       { id: "inspection", name: "Inspection", price: 65, detail: "Minimum starting price" },
       { id: "safety", name: "Safety Inspection", price: 199, detail: "Starting price" }
     ]
-  },
-  {
-    id: "lighting",
-    label: "Lighting",
-    kicker: "Bulbs",
-    cardPrice: "Bulbs from $20",
-    description: "Halogen bulb replacement and LED bulb set service. Fitment may vary by vehicle.",
-    services: [
-      { id: "halogen", name: "Halogen Bulb", price: 20, detail: "Starting price" },
-      { id: "led", name: "LED Bulbs Set", price: 80, detail: "Starting price" }
-    ]
   }
 ];
 

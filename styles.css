@@ -83,6 +83,21 @@ textarea {
   font-weight: 800;
 }
 
+.top-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.canada-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .navbar {
   min-height: 76px;
   display: flex;
@@ -399,7 +414,7 @@ textarea:focus {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;

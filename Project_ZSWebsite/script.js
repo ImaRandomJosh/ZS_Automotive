@@ -1,17 +1,15 @@
-const QUOTE_EMAIL = "quotes@zsauto.ca";
+const QUOTE_EMAIL = "info@zsautomotive.ca";
 
 const categories = [
   {
     id: "tires",
     label: "Tires",
     kicker: "Tire service",
-    cardPrice: "Changeovers from $70/set",
-    description: "Seasonal tire changeovers, balancing, plug/patch repair, valve stems, TPMS, and reseal work.",
+    cardPrice: "Starting at $70",
+    description: "Seasonal tire swap, tire rotation, tires sale, balancing, plug/patch repair, valve stems, TPMS and Reseal.",
     services: [
-      { id: "on-rim", name: "Tire Changeover - On Rim", price: 70, detail: "From $70/set" },
-      { id: "off-rim-14-18", name: 'Off Rim 14"-18"', price: 100, detail: "From $100/set" },
-      { id: "off-rim-19-21", name: 'Off Rim 19"-21"', price: 120, detail: "From $120/set" },
-      { id: "off-rim-22-24", name: 'Off Rim 22"-24"', price: 150, detail: "From $150/set" },
+      { id: "on-rim", name: "On Rim Swap / Tire Rotation", price: 70, detail: "From $70/set" },
+      { id: "off-rim", name: "Off Rim", price: 100, detail: "Starting at $100" },
       { id: "balancing", name: "Tire Balancing", price: 40, detail: "Starting price" },
       { id: "plug", name: "Tire Plug", price: 40, detail: "Flat repair starting price" },
       { id: "inside-patch", name: "Tire Inside Patch", price: 60, detail: "Internal repair starting price" },
@@ -40,12 +38,11 @@ const categories = [
     id: "brakes",
     label: "Brakes",
     kicker: "Brake service",
-    cardPrice: "Front brake service from $425",
+    cardPrice: "Brake Service start at $375",
     description: "Front and rear brake jobs, with vehicle-specific pricing and optional warranty coverage.",
     services: [
       { id: "front-brakes", name: "Front Brake Service", price: 425, detail: "From $425, vehicle fitment may vary" },
-      { id: "rear-brakes", name: "Rear Brake Service", price: 375, detail: "From $375, vehicle fitment may vary" },
-      { id: "warranty", name: "1-Year Extended Warranty", price: 100, detail: "Add-on warranty" }
+      { id: "rear-brakes", name: "Rear Brake Service", price: 375, detail: "From $375, vehicle fitment may vary" }
     ]
   },
   {
@@ -58,22 +55,96 @@ const categories = [
       { id: "inspection", name: "Inspection", price: 65, detail: "Minimum starting price" },
       { id: "safety", name: "Safety Inspection", price: 199, detail: "Starting price" }
     ]
+  }
+];
+
+const googleReviews = [
+  {
+    name: "Yuri Menko",
+    meta: "Local Guide • 59 reviews • 567 photos",
+    date: "2 months ago",
+    avatar: "Y",
+    color: "red",
+    text: "Great experience at this shop. The staff were friendly, honest, and explained everything clearly. I had problem with EPP brake. The work was done on time and the price was fair. My car runs great now. I'll definitely come back and would recommend this place to others.",
+    preview: "Friendly, honest staff who explained everything clearly. The work was done on time and the price was fair."
   },
   {
-    id: "lighting",
-    label: "Lighting",
-    kicker: "Bulbs",
-    cardPrice: "Bulbs from $20",
-    description: "Halogen bulb replacement and LED bulb set service. Fitment may vary by vehicle.",
-    services: [
-      { id: "halogen", name: "Halogen Bulb", price: 20, detail: "Starting price" },
-      { id: "led", name: "LED Bulbs Set", price: 80, detail: "Starting price" }
-    ]
+    name: "Sushil Gaur",
+    meta: "Local Guide • 41 reviews • 73 photos",
+    date: "2 months ago",
+    avatar: "S",
+    color: "green",
+    text: "Highly recommend ZS Automotive. Even though I live in Oakville, I went to Etobicoke after both the Volvo dealership and Mr. Lube failed to diagnose my low tire pressure warning. ZS Automotive found a hairline leak caused by part of a screw lodged in the tire wall area. Their focus was solving the problem, not just the ticket value.",
+    preview: "They found a tire issue others missed and focused on solving the problem, not just the ticket value."
+  },
+  {
+    name: "Marsela Gega",
+    meta: "6 reviews",
+    date: "4 months ago",
+    avatar: "M",
+    color: "pink",
+    text: "I came in for a second opinion after being advised elsewhere that my car needed several repairs. The mechanic inspected the vehicle carefully and explained everything was safe and functioning properly, without pushing unnecessary services.",
+    preview: "A careful second opinion with clear explanations and no unnecessary services pushed."
+  },
+  {
+    name: "Ali Naseer",
+    meta: "Local Guide • 58 reviews • 30 photos",
+    date: "6 months ago",
+    avatar: "A",
+    color: "blue",
+    text: "Great experience at ZS Automotive. Took my car in for basic servicing and was very happy with the time taken, price, and post service drive home. Will recommend.",
+    preview: "Basic service done with good timing, fair pricing, and a positive post-service drive home."
+  },
+  {
+    name: "Patrick Kwok",
+    meta: "Local Guide • 127 reviews • 28 photos",
+    date: "3 months ago",
+    avatar: "P",
+    color: "dark",
+    text: "These guys are incredible. They are now my go-to for my Jaguar. They do everything by the book at very reasonable prices. It's hard to find honest mechanics these days and I'm happy to finally found one.",
+    preview: "By-the-book work, reasonable prices, and honest service for a Jaguar owner."
+  },
+  {
+    name: "TK",
+    meta: "Local Guide • 37 reviews • 1 photo",
+    date: "4 months ago",
+    avatar: "TK",
+    color: "slate",
+    text: "Zubain and team are awesome. I was referred by a friend who gets all of his car's work done at the shop. They fixed an issue with my CRV at a good rate.",
+    preview: "Referred by a friend and had a CRV issue fixed at a good rate."
+  },
+  {
+    name: "Jove Cana",
+    meta: "Local Guide • 91 reviews • 196 photos",
+    date: "a month ago",
+    avatar: "J",
+    color: "teal",
+    text: "Great experience. Friendly people. Very upfront about service and pricing. Were able to accommodate a tire change on short notice. Fast turnaround. Highly recommended!",
+    preview: "Friendly, upfront about service and pricing, with a fast tire change on short notice."
+  },
+  {
+    name: "Jessica Wong",
+    meta: "12 reviews • 1 photo",
+    date: "7 months ago",
+    avatar: "J",
+    color: "purple",
+    text: "Amazing service and so quick! They replaced my brake pads and rotor within a few hours. Great customer service, would come back again.",
+    preview: "Brake pads and rotor replaced within a few hours, with great customer service."
+  },
+  {
+    name: "tizi",
+    meta: "15 reviews • 1 photo",
+    date: "a month ago",
+    avatar: "t",
+    color: "rose",
+    text: "Super nice guys working here did their job well and fast. Got my tire fixed up quick after it was making an awful grinding sound on the highway.",
+    preview: "A tire issue was fixed quickly after it started making a grinding sound on the highway."
   }
 ];
 
 let activeCategoryId = "tires";
 let quoteItems = JSON.parse(localStorage.getItem("zsAutoQuoteItems") || "[]");
+let activeReviewIndex = 0;
 
 const formatter = new Intl.NumberFormat("en-CA", {
   style: "currency",
@@ -88,8 +159,8 @@ const serviceGrid = $("#serviceGrid");
 const categoryTabs = $("#categoryTabs");
 const serviceSelect = $("#serviceSelect");
 const serviceNeededSelect = $("#serviceNeeded");
-const quantityInput = $("#quantityInput");
-const tireOptions = $("#tireOptions");
+const rimSizeOptions = $("#rimSizeOptions");
+const rimSizeSelect = $("#rimSizeSelect");
 const oilOptions = $("#oilOptions");
 const warrantyOptions = $("#warrantyOptions");
 const quoteItemsEl = $("#quoteItems");
@@ -105,6 +176,14 @@ function getActiveCategory() {
 function getSelectedService() {
   const activeCategory = getActiveCategory();
   return activeCategory.services.find((service) => service.id === serviceSelect.value) || activeCategory.services[0];
+}
+
+function getServicePrice(service) {
+  if (service.id === "off-rim") {
+    return Number(rimSizeSelect.value) || service.price;
+  }
+
+  return service.price;
 }
 
 function renderServiceCards() {
@@ -140,10 +219,9 @@ function renderTabs() {
 function renderServiceOptions() {
   const activeCategory = getActiveCategory();
   serviceSelect.innerHTML = activeCategory.services.map((service) => `
-    <option value="${service.id}">${service.name} — ${formatter.format(service.price)}</option>
+    <option value="${service.id}">${service.name} — ${formatter.format(getServicePrice(service))}</option>
   `).join("");
 
-  quantityInput.value = 1;
   $('#extraLitres').value = 0;
   $('#premiumFilter').value = 0;
   $('#warrantyCheckbox').checked = false;
@@ -159,32 +237,44 @@ function setActiveCategory(categoryId) {
 function syncConditionalOptions() {
   const category = getActiveCategory();
   const service = getSelectedService();
-  const isTireChangeover = category.id === "tires" && (service.id.startsWith("off-rim") || service.id === "on-rim");
 
-  tireOptions.classList.toggle("hidden", !isTireChangeover);
+  rimSizeOptions.classList.toggle("hidden", category.id !== "tires" || service.id !== "off-rim");
   oilOptions.classList.toggle("hidden", category.id !== "oil" || !service.extraLitre);
   warrantyOptions.classList.toggle("hidden", category.id !== "brakes" || service.id === "warranty");
+}
+
+function updateServiceOptionPrices() {
+  const selectedValue = serviceSelect.value;
+  const activeCategory = getActiveCategory();
+
+  activeCategory.services.forEach((service) => {
+    const option = serviceSelect.querySelector(`option[value="${service.id}"]`);
+    if (option) {
+      option.textContent = `${service.name} — ${formatter.format(getServicePrice(service))}`;
+    }
+  });
+
+  serviceSelect.value = selectedValue;
 }
 
 function calculateCurrentItem() {
   const category = getActiveCategory();
   const service = getSelectedService();
-  const quantity = Math.max(1, Number(quantityInput.value) || 1);
   const extraLitres = Math.max(0, Number($('#extraLitres').value) || 0);
   const premiumFilter = Number($('#premiumFilter').value) || 0;
   const warranty = $('#warrantyCheckbox').checked ? 100 : 0;
 
-  let basePrice = service.price;
-  const details = [service.detail];
+  let basePrice = getServicePrice(service);
+  const details = [service.id === "off-rim" ? `Starting at ${formatter.format(basePrice)}` : service.detail];
+
+  if (service.id === "off-rim") {
+    details.push(`${rimSizeSelect.selectedOptions[0].textContent} rim size`);
+  }
 
   if (category.id === "oil" && service.extraLitre) {
     basePrice += extraLitres * service.extraLitre;
     if (extraLitres > 0) details.push(`${extraLitres} extra litre(s)`);
     if (premiumFilter > 0) details.push("Premium filter included");
-  }
-
-  if (category.id === "tires" && (service.id.startsWith("off-rim") || service.id === "on-rim")) {
-    details.push(`${$('#tireMountType').selectedOptions[0].textContent}, ${$('#rimSizeSelect').selectedOptions[0].textContent}`);
   }
 
   if (category.id === "brakes" && warranty) {
@@ -195,8 +285,7 @@ function calculateCurrentItem() {
     id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random()),
     category: category.label,
     service: service.name,
-    quantity,
-    price: basePrice * quantity + premiumFilter + warranty,
+    price: basePrice + premiumFilter + warranty,
     details: details.filter(Boolean).join(" • ")
   };
 }
@@ -242,7 +331,7 @@ function renderQuote() {
       <div class="quote-item-top">
         <div>
           <strong>${item.service}</strong>
-          <small>${item.category} • Qty ${item.quantity}</small>
+          <small>${item.category}</small>
           <small>${item.details}</small>
         </div>
         <button class="remove-item" type="button" aria-label="Remove ${item.service}" data-remove="${item.id}">×</button>
@@ -253,7 +342,7 @@ function renderQuote() {
 
   selectedServicesPreview.innerHTML = `
     <ul>
-      ${quoteItems.map((item) => `<li>${item.service} × ${item.quantity} — ${formatter.format(item.price)}</li>`).join("")}
+      ${quoteItems.map((item) => `<li>${item.service} — ${formatter.format(item.price)}</li>`).join("")}
     </ul>
   `;
 
@@ -279,7 +368,7 @@ function buildQuotePayload() {
 function buildEmailBody(payload) {
   const customer = payload.customer;
   const services = payload.quoteItems.length
-    ? payload.quoteItems.map((item) => `- ${item.service} x ${item.quantity}: ${formatter.format(item.price)} (${item.details})`).join("\n")
+    ? payload.quoteItems.map((item) => `- ${item.service}: ${formatter.format(item.price)} (${item.details})`).join("\n")
     : customer.serviceNeeded || "No service selected";
 
   return [
@@ -288,10 +377,8 @@ function buildEmailBody(payload) {
     `Name: ${customer.firstName || ""} ${customer.lastName || ""}`,
     `Phone: ${customer.phone || ""}`,
     `Email: ${customer.email || ""}`,
-    `Postal code: ${customer.postalCode || ""}`,
-    `Vehicle: ${customer.vehicleYear || ""} ${customer.vehicleMake || ""} ${customer.vehicleModel || ""}`,
+    `Plate number: ${customer.plateNumber || ""}`,
     `Preferred date: ${customer.preferredDate || ""}`,
-    `Best contact method: ${customer.contactMethod || ""}`,
     "",
     "Services:",
     services,
@@ -321,27 +408,20 @@ function populateServiceSelects() {
 }
 
 function syncHeroQuoteToForm() {
-  const heroVehicle = $('#heroVehicle').value.trim();
+  const heroPlate = $('#heroPlate').value.trim();
   const heroService = $('#heroService').value;
-  const heroPostal = $('#heroPostal').value.trim();
-
-  if (heroVehicle) {
-    const parts = heroVehicle.split(/\s+/);
-    if (/^\d{4}$/.test(parts[0])) {
-      $('#vehicleYear').value = parts.shift();
-    }
-    if (parts.length) {
-      $('#vehicleMake').value = parts.shift() || "";
-      $('#vehicleModel').value = parts.join(" ");
-    }
-  }
+  const heroPhone = $('#heroPhone').value.trim();
 
   if (heroService) {
     serviceNeededSelect.value = heroService;
   }
 
-  if (heroPostal) {
-    $('#postalCode').value = heroPostal;
+  if (heroPlate) {
+    $('#plateNumber').value = heroPlate;
+  }
+
+  if (heroPhone) {
+    $('#phone').value = heroPhone;
   }
 }
 
@@ -368,7 +448,89 @@ function setupMobileMenu() {
   });
 }
 
+function getReviewByOffset(offset) {
+  return googleReviews[(activeReviewIndex + offset + googleReviews.length) % googleReviews.length];
+}
+
+function renderReviewHeader(review) {
+  return `
+    <div class="review-card__top">
+      <span class="review-avatar review-avatar-${review.color}">${review.avatar}</span>
+      <div><strong>${review.name}</strong><span>${review.meta}</span></div>
+    </div>
+  `;
+}
+
+function renderReviewStars(review) {
+  return `<div class="review-stars" aria-label="5 out of 5 stars">★★★★★ <span>${review.date}</span></div>`;
+}
+
+function renderReviewCarousel() {
+  const carousel = $('.review-carousel');
+  const spotlight = $('#reviewSpotlight');
+  const previewStack = $('#reviewPreviewStack');
+  const dots = $('#reviewDots');
+
+  if (!spotlight || !previewStack || !dots) return;
+
+  const activeReview = getReviewByOffset(0);
+
+  spotlight.innerHTML = `
+    ${renderReviewHeader(activeReview)}
+    ${renderReviewStars(activeReview)}
+    <p>${activeReview.text}</p>
+  `;
+
+  previewStack.innerHTML = [1, 2, 3].map((offset) => {
+    const review = getReviewByOffset(offset);
+    return `
+      <article class="review-preview-card">
+        ${renderReviewHeader(review)}
+        ${renderReviewStars(review)}
+        <p>${review.preview}</p>
+      </article>
+    `;
+  }).join("");
+
+  dots.innerHTML = googleReviews.map((review, index) => `
+    <button class="review-dot ${index === activeReviewIndex ? "active" : ""}" type="button" aria-label="Show ${review.name} review" data-review-index="${index}"></button>
+  `).join("");
+
+  $$('[data-review-index]').forEach((button) => {
+    button.addEventListener('click', () => {
+      activeReviewIndex = Number(button.dataset.reviewIndex) || 0;
+      renderReviewCarousel();
+    });
+  });
+
+  if (carousel) {
+    carousel.classList.remove("animate-review");
+    void carousel.offsetWidth;
+    carousel.classList.add("animate-review");
+  }
+}
+
+function setupReviewCarousel() {
+  const previous = $('#previousReview');
+  const next = $('#nextReview');
+
+  if (!previous || !next) return;
+
+  previous.addEventListener('click', () => {
+    activeReviewIndex = (activeReviewIndex - 1 + googleReviews.length) % googleReviews.length;
+    renderReviewCarousel();
+  });
+
+  next.addEventListener('click', () => {
+    activeReviewIndex = (activeReviewIndex + 1) % googleReviews.length;
+    renderReviewCarousel();
+  });
+
+  renderReviewCarousel();
+}
+
 serviceSelect.addEventListener('change', syncConditionalOptions);
+rimSizeSelect.addEventListener('change', updateServiceOptionPrices);
 $('#addToQuoteButton').addEventListener('click', addCurrentItemToQuote);
 $('#clearQuoteButton').addEventListener('click', clearQuote);
 $('#quoteForm').addEventListener('submit', submitQuoteRequest);
@@ -381,3 +543,4 @@ renderServiceOptions();
 renderQuote();
 populateServiceSelects();
 setupMobileMenu();
+setupReviewCarousel();

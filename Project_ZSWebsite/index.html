@@ -16,7 +16,10 @@
       <div class="container top-strip__inner">
         <span>354 Royal York Rd Unit 2, Etobicoke</span>
         <span>Tires • Oil Changes • Brakes • Safety</span>
-        <a href="tel:+14376038022">Call 437-603-8022</a>
+        <a class="top-call" href="tel:+14376038022">
+          <span class="canada-flag" aria-hidden="true">🇨🇦</span>
+          Call 437-603-8022
+        </a>
       </div>
     </div>
 
@@ -45,7 +48,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Etobicoke auto service</p>
           <h1>Tires, oil changes & brakes in Etobicoke.</h1>
-          <p class="hero-text">Fast quotes for tire service, oil changes, brakes, safety inspections, and lighting work at ZS Automotive on Royal York Rd.</p>
+          <p class="hero-text">Fast quotes for tire service, oil changes, brakes, and safety inspections at ZS Automotive on Royal York Rd.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="tel:+14376038022">Call 437-603-8022</a>
             <a class="button button-secondary" href="#quote">Request a Quote</a>
@@ -63,19 +66,19 @@
           <div class="quote-widget">
             <div class="widget-heading">
               <p class="widget-title">Quick quote</p>
-              <p>Tell us the vehicle and service. Final price is confirmed before work starts.</p>
+              <p>Tell us the plate number and service. Final price is confirmed before work starts.</p>
             </div>
             <div class="widget-fields">
-              <label for="heroVehicle">Vehicle</label>
-              <input id="heroVehicle" type="text" placeholder="Example: 2020 Honda Civic" />
+              <label for="heroPlate">Plate number</label>
+              <input id="heroPlate" type="text" placeholder="Plate number" />
 
               <label for="heroService">Service needed</label>
               <select id="heroService">
                 <option value="">Pick a service</option>
               </select>
 
-              <label for="heroPostal">Postal code</label>
-              <input id="heroPostal" type="text" placeholder="Postal code" />
+              <label for="heroPhone">Phone number</label>
+              <input id="heroPhone" type="tel" placeholder="Phone number" />
 
               <a class="button button-primary button-full" href="#quote" id="heroQuoteButton">Continue Quote</a>
             </div>
@@ -108,8 +111,8 @@
         <h2>Three quick steps.</h2>
       </div>
       <div class="steps-widget">
-        <div><span>1</span><strong>Pick a service</strong><p>Choose tires, oil, brakes, safety, lighting, or repair work.</p></div>
-        <div><span>2</span><strong>Send vehicle details</strong><p>Add your year, make, model, preferred date, and notes.</p></div>
+        <div><span>1</span><strong>Pick a service</strong><p>Choose tires, oil, brakes, safety, or repair work.</p></div>
+        <div><span>2</span><strong>Send vehicle details</strong><p>Add your vehicle plate number, year, make, model, additional information.</p></div>
         <div><span>3</span><strong>Shop confirms</strong><p>ZS Automotive confirms price and availability before starting.</p></div>
       </div>
     </section>
@@ -137,33 +140,20 @@
             <div class="pricing-tabs" id="categoryTabs" role="tablist" aria-label="Pricing categories"></div>
 
             <div class="price-builder">
-              <div class="form-row two-col">
+              <div class="form-row">
                 <div>
                   <label for="serviceSelect">Service</label>
                   <select id="serviceSelect"></select>
                 </div>
-                <div>
-                  <label for="quantityInput">Quantity</label>
-                  <input id="quantityInput" type="number" min="1" value="1" />
-                </div>
               </div>
 
-              <div class="form-row two-col hidden" id="tireOptions">
-                <div>
-                  <label for="rimSizeSelect">Rim size</label>
-                  <select id="rimSizeSelect">
-                    <option value="14-18">14&quot;–18&quot;</option>
-                    <option value="19-21">19&quot;–21&quot;</option>
-                    <option value="22-24">22&quot;–24&quot;</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="tireMountType">Wheel setup</label>
-                  <select id="tireMountType">
-                    <option value="off-rim">Off rim</option>
-                    <option value="on-rim">On rim</option>
-                  </select>
-                </div>
+              <div class="form-row hidden" id="rimSizeOptions">
+                <label for="rimSizeSelect">Rim size</label>
+                <select id="rimSizeSelect">
+                  <option value="100">14&quot;–18&quot;</option>
+                  <option value="120">19&quot;–21&quot;</option>
+                  <option value="150">22&quot;–24&quot;</option>
+                </select>
               </div>
 
               <div class="form-row two-col hidden" id="oilOptions">
@@ -227,8 +217,8 @@
       <div class="quote-shell">
         <div class="quote-intro">
           <p class="eyebrow">Quote request</p>
-          <h2>Send your vehicle details.</h2>
-          <p>Need tires, an oil change, brakes, safety work, or lighting service? Send the details and ZS Automotive will confirm pricing before work begins.</p>
+          <h2>Customized Request</h2>
+          <p>Need more than basic service? Hear or feel any weird noise? Let us know in the quote details and we can work out pricing before work begins.</p>
           <div class="quote-contact-box">
             <span>Prefer to call?</span>
             <a href="tel:+14376038022">437-603-8022</a>
@@ -258,19 +248,9 @@
             </div>
           </div>
 
-          <div class="form-row three-col">
-            <div>
-              <label for="vehicleYear">Year</label>
-              <input id="vehicleYear" name="vehicleYear" type="text" placeholder="2020" />
-            </div>
-            <div>
-              <label for="vehicleMake">Make</label>
-              <input id="vehicleMake" name="vehicleMake" type="text" placeholder="Honda" />
-            </div>
-            <div>
-              <label for="vehicleModel">Model</label>
-              <input id="vehicleModel" name="vehicleModel" type="text" placeholder="Civic" />
-            </div>
+          <div class="form-row">
+            <label for="plateNumber">Plate number</label>
+            <input id="plateNumber" name="plateNumber" type="text" placeholder="Plate number" />
           </div>
 
           <div class="form-row two-col">
@@ -283,21 +263,6 @@
             <div>
               <label for="preferredDate">Preferred date</label>
               <input id="preferredDate" name="preferredDate" type="date" />
-            </div>
-          </div>
-
-          <div class="form-row two-col">
-            <div>
-              <label for="postalCode">Postal code</label>
-              <input id="postalCode" name="postalCode" type="text" placeholder="Postal code" />
-            </div>
-            <div>
-              <label for="contactMethod">Best contact method</label>
-              <select id="contactMethod" name="contactMethod">
-                <option>Phone</option>
-                <option>Text</option>
-                <option>Email</option>
-              </select>
             </div>
           </div>
 
@@ -323,17 +288,23 @@
       </div>
     </section>
 
-    <section class="section review-section">
-      <div class="container review-layout">
-        <div>
-          <p class="eyebrow">Customer feedback</p>
-          <h2>Known for clear explanations and fair service.</h2>
-          <p>Public review summaries mention straightforward communication, careful inspections, and reasonable pricing.</p>
+    <section class="section review-section" id="reviews">
+      <div class="container review-layout review-gallery">
+        <div class="review-gallery__intro">
+          <div>
+            <p class="eyebrow">Google reviews</p>
+            <h2>Drivers trust ZS Automotive for honest answers.</h2>
+            <p>Recent Google feedback highlights clear communication, careful diagnostics, fair pricing, and quick service.</p>
+          </div>
+          <a class="button button-secondary" href="https://maps.app.goo.gl/D3FSMwTimuhTxMHdA" target="_blank" rel="noopener">Read more on Google</a>
         </div>
-        <div class="review-points">
-          <div><strong>4.9 rating</strong><span>Based on public local listing data</span></div>
-          <div><strong>51 reviews</strong><span>Verify before publishing live</span></div>
-          <div><strong>Common feedback</strong><span>Quick diagnostics • clear pricing • careful inspections</span></div>
+
+        <div class="review-carousel" aria-label="Selected Google reviews">
+          <button class="review-arrow" type="button" id="previousReview" aria-label="Previous review">‹</button>
+          <article class="review-spotlight" id="reviewSpotlight" aria-live="polite"></article>
+          <div class="review-preview-stack" id="reviewPreviewStack" aria-label="Upcoming reviews"></div>
+          <button class="review-arrow" type="button" id="nextReview" aria-label="Next review">›</button>
+          <div class="review-dots" id="reviewDots" aria-label="Review navigation"></div>
         </div>
       </div>
     </section>
@@ -343,7 +314,7 @@
         <div class="contact-main">
           <p class="eyebrow">Contact</p>
           <h2>Call or request a quote.</h2>
-          <p>For tire service, oil changes, brakes, safety work, or lighting service, call the shop or send your vehicle details.</p>
+          <p>For tire service, oil changes, brakes, safety work, or repair service, call the shop or send your vehicle details.</p>
           <div class="contact-actions">
             <a class="button button-primary" href="tel:+14376038022">Call 437-603-8022</a>
             <a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&query=ZS%20Automotive%20354%20Royal%20York%20Rd%20Unit%202%20Etobicoke" target="_blank" rel="noopener">Get Directions</a>
@@ -357,7 +328,7 @@
           </div>
           <div>
             <strong>Email</strong>
-            <a href="mailto:quotes@zsauto.ca">quotes@zsauto.ca</a>
+            <a href="mailto:info@zsautomotive.ca">info@zsautomotive.ca</a>
           </div>
           <div>
             <strong>Address</strong>
@@ -370,7 +341,7 @@
           <ul>
             <li><span>Monday–Friday</span><span>8 AM–8 PM</span></li>
             <li><span>Saturday</span><span>9 AM–5 PM</span></li>
-            <li><span>Sunday</span><span>9 AM–5 PM</span></li>
+            <li><span>Sunday (Limited to Oil Change and Tires Only)</span><span>9 AM–5 PM</span></li>
           </ul>
           <p>Call ahead to confirm current availability.</p>
         </div>

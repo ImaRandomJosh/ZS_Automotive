@@ -388,14 +388,31 @@ function buildEmailBody(payload) {
     `Notes: ${customer.notes || ""}`
   ].join("\n");
 }
-
-function submitQuoteRequest(event) {
+async function submitQuoteRequest(event) {
   event.preventDefault();
+
   const payload = buildQuotePayload();
-  const subject = encodeURIComponent(`ZS Automotive quote request - ${payload.customer.firstName || "Customer"}`);
-  const body = encodeURIComponent(buildEmailBody(payload));
-  window.location.href = `mailto:${QUOTE_EMAIL}?subject=${subject}&body=${body}`;
-  showToast("Quote request ready to send.");
+
+  try {
+    const response = await fetch("/api/submitQuote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Unable to submit quote");
+    }
+
+    showToast(`Quote ${result.quoteNumber} submitted successfully.`);
+  } catch (error) {
+    console.error("Quote submission failed:", error);
+    showToast("Unable to submit quote. Please try again.");
+  }
 }
 
 function populateServiceSelects() {

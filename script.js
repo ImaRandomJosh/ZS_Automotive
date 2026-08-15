@@ -424,6 +424,15 @@ function populateServiceSelects() {
   serviceNeededSelect.innerHTML = options;
 }
 
+function findServiceByFormValue(serviceValue) {
+  for (const category of categories) {
+    const service = category.services.find((item) => `${category.label}: ${item.name}` === serviceValue);
+    if (service) return { category, service };
+  }
+
+  return null;
+}
+
 function syncHeroQuoteToForm() {
   const heroPlate = $('#heroPlate').value.trim();
   const heroService = $('#heroService').value;
@@ -431,6 +440,28 @@ function syncHeroQuoteToForm() {
 
   if (heroService) {
     serviceNeededSelect.value = heroService;
+
+    const selection = findServiceByFormValue(heroService);
+    if (selection) {
+      setActiveCategory(selection.category.id);
+      serviceSelect.value = selection.service.id;
+      syncConditionalOptions();
+
+      const item = calculateCurrentItem();
+      const alreadyAdded = quoteItems.some((quoteItem) => (
+        quoteItem.category === item.category
+        && quoteItem.service === item.service
+        && quoteItem.price === item.price
+        && quoteItem.details === item.details
+      ));
+
+      if (!alreadyAdded) {
+        quoteItems.push(item);
+        saveQuoteItems();
+        renderQuote();
+        showToast(`${item.service} added to quote.`);
+      }
+    }
   }
 
   if (heroPlate) {
